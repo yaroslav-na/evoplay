@@ -1,0 +1,146 @@
+@import "../mixins/index.scss";
+
+.header {
+  background: var(--background-color);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--background-color);
+
+    @include on-laptop {
+      display: none;
+    }
+  }
+
+  &__container {
+    padding-block: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-laptop {
+      flex-direction: row;
+      gap: 34px;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--accent-primary-color);
+    text-decoration: none;
+    outline: none;
+    position: relative;
+
+    @include on-laptop {
+      font-size: 26px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26px;
+    width: 100%;
+    position: relative;
+
+    @include on-laptop {
+      width: auto;
+      margin-top: 0;
+    }
+  }
+
+  &__burger-button {
+    background: none;
+    width: 53px;
+    height: 35px;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: inherit;
+    transition: color 0.15s ease;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--accent-primary-color);
+    }
+
+    @include on-laptop {
+      display: none;
+    }
+  }
+
+  &__burger-icon {
+    width: 53px;
+    height: 35px;
+  }
+
+  &__acction-button {
+    padding: 8px;
+    font-size: 12px;
+
+    @include on-laptop {
+      padding-inline: 16px;
+      font-size: 14px;
+    }
+  }
+  &__nav {
+    display: none;
+
+    @include on-laptop {
+      display: block;
+      margin-left: auto;
+    }
+  }
+
+  &.--js-menu-shown &__nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: var(--foreground-color);
+    width: 100%;
+    height: calc(100vh - var(--header-top));
+    height: calc(100lvh - var(--header-top));
+  }
+
+  &.--js-menu-shown &__menu {
+    height: calc(100vh - var(--header-top));
+    height: calc(100svh - var(--header-top));
+    padding-block: calc(var(--header-height) + 20px) 20px;
+    overflow: auto;
+  }
+
+  &__menu {
+    list-style: none;
+    flex-direction: column;
+    display: flex;
+    gap: 34px;
+
+    @include on-laptop {
+      flex-direction: row;
+    }
+  }
+
+  &__menu-item {
+    text-align: center;
+  }
+
+  &__menu-link {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.15s ease;
+
+    &:hover {
+      color: var(--accent-primary-color);
+    }
+  }
+}

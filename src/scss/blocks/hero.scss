@@ -1,0 +1,122 @@
+@import "../mixins/index.scss";
+
+.hero {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 48px;
+
+    @include on-laptop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 90px;
+      text-align: left;
+      padding-top: 84px;
+    }
+  }
+
+  &__title {
+    font-size: 28px;
+    line-height: 1.6;
+    max-width: 628px;
+
+    @include on-laptop {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      max-width: none;
+      font-size: 36px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+    }
+  }
+  &__subtitle {
+    margin-top: 14px;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 628px;
+
+    @include on-laptop {
+      margin-top: 0;
+      grid-column: 1/2;
+      grid-row: 2/3;
+      max-width: none;
+      font-size: 24px;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 64px;
+    gap: 40px;
+
+    @include on-laptop {
+      grid-column: 1/2;
+      grid-row: 3/4;
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    @include on-desktop {
+      margin-top: 112px;
+      flex-direction: row;
+    }
+  }
+  &__button {
+    padding: 18px 66px;
+    font-size: 24px;
+    min-width: 292px;
+
+    @include on-laptop {
+      grid-column: 1/2;
+      grid-row: 3/4;
+      min-width: none;
+    }
+  }
+
+  &__img-container {
+    margin-top: 64px;
+    display: block;
+    max-width: 628px;
+    position: relative;
+    z-index: 1;
+
+    @include on-laptop {
+      grid-column: 2/3;
+      grid-row: 1/4;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(12, 54, 185, 0.69) 0%,
+        rgba(5, 24, 83, 0) 100%
+      );
+
+      @include on-laptop {
+        width: 120%;
+        height: 120%;
+        top: -20%;
+        left: -20%;
+      }
+    }
+  }
+  &__image {
+    object-fit: contain;
+    width: 100%;
+  }
+}

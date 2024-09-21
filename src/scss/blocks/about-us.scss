@@ -1,0 +1,121 @@
+@import "../mixins//index.scss";
+
+.about-us {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--primary-color);
+    padding-top: 130px;
+
+    @include on-laptop {
+      padding-top: 180px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, auto) 1fr;
+      align-items: start;
+      gap: 0px 50px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      grid-template-columns: 520px 1fr;
+      gap: 0px 110px;
+      padding-top: 215px;
+    }
+  }
+  &__title {
+    font-size: 28px;
+    line-height: 1.6;
+    max-width: 628px;
+
+    @include on-laptop {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+
+    @include on-desktop {
+      font-size: 38px;
+    }
+  }
+  &__text {
+    max-width: 628px;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+
+    @include on-laptop {
+      grid-column: 2/3;
+    }
+
+    &--first {
+      margin-top: 10px;
+
+      @include on-laptop {
+        grid-row: 2/3;
+        margin-top: 0;
+        font-size: 24px;
+      }
+    }
+    &--second {
+      margin-top: 50px;
+
+      @include on-laptop {
+        grid-row: 3/4;
+        margin-top: 20px;
+      }
+    }
+  }
+  &__image-container {
+    margin-top: 50px;
+    max-width: 515px;
+    height: 457px;
+    width: 100%;
+
+    @include on-laptop {
+      margin-top: 0;
+      max-width: none;
+      grid-column: 1/2;
+      grid-row: 1/5;
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 150%;
+        height: 150%;
+        top: -40%;
+        right: -40%;
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(12, 54, 185, 0.69) 0%,
+          rgba(5, 24, 83, 0) 100%
+        );
+        z-index: -1;
+        pointer-events: none;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 35px;
+  }
+  &__button {
+    margin-top: 40px;
+    font-size: 18px;
+    padding: 10px 40px;
+
+    @include on-laptop {
+      margin-top: 20px;
+      grid-column: 2/3;
+      grid-row: 4/5;
+      justify-self: flex-start;
+    }
+  }
+}

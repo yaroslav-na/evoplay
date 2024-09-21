@@ -1,0 +1,42 @@
+@import "../mixins/index.scss";
+
+.feature-card {
+  padding-inline: 24px;
+  padding-bottom: 38px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: calc(100% - 42px);
+    width: 100%;
+    background: var(--foreground-color);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 16px;
+  }
+
+  &__image {
+    display: block;
+    margin-inline: auto;
+    width: 134px;
+    height: 134px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-top: 20px;
+
+    @include on-laptop {
+      margin-top: 16px;
+    }
+  }
+}

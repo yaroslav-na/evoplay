@@ -1,0 +1,21 @@
+.field {
+  padding: 16px 30px;
+  background: var(--foreground-color);
+  font-family: "Mashetic";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--primary-color);
+  border: 0;
+  outline: none;
+  transition: box-shadow 0.15s ease;
+
+  &:focus {
+    box-shadow: inset 0 -4px 0 0 var(--primary-color);
+  }
+
+  &::placeholder {
+    opacity: 1;
+    color: inherit;
+  }
+}

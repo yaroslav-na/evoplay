@@ -1,0 +1,19 @@
+ <svg class="icon">
+    <use xlink:href="/src/assets/imgs/icons.sprite.svg#arrow"></use>
+  </svg><svg class="icon">
+    <use xlink:href="/src/assets/imgs/icons.sprite.svg#burger"></use>
+  </svg><svg class="icon">
+    <use xlink:href="/src/assets/imgs/icons.sprite.svg#cart"></use>
+  </svg><svg class="icon">
+    <use xlink:href="/src/assets/imgs/icons.sprite.svg#coin"></use>
+  </svg><svg class="icon">
+    <use xlink:href="/src/assets/imgs/icons.sprite.svg#document"></use>
+  </svg><svg class="icon">
+    <use xlink:href="/src/assets/imgs/icons.sprite.svg#document-2"></use>
+  </svg><svg class="icon">
+    <use xlink:href="/src/assets/imgs/icons.sprite.svg#envelope"></use>
+  </svg><svg class="icon">
+    <use xlink:href="/src/assets/imgs/icons.sprite.svg#phone"></use>
+  </svg><svg class="icon">
+    <use xlink:href="/src/assets/imgs/icons.sprite.svg#pin"></use>
+  </svg>

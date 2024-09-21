@@ -1,0 +1,27 @@
+@import "../mixins/index.scss";
+
+.features {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 48px;
+    gap: 64px;
+    list-style: none;
+    align-items: center;
+    padding-top: 78px;
+    padding-bottom: 100px;
+
+    @include on-laptop {
+      gap: 44px;
+      flex-direction: row;
+      max-width: 1240px;
+    }
+  }
+
+  &__item {
+    max-width: 400px;
+    @include on-laptop {
+      flex: 1 1 0;
+    }
+  }
+}

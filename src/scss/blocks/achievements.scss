@@ -1,0 +1,80 @@
+@import "../mixins/index.scss";
+
+.achievements {
+  background: var(--foreground-color);
+
+  &__container {
+    padding-block: 100px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include on-tablet {
+      padding-block: 58px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 40px 20px;
+      justify-content: space-between;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include on-tablet {
+      flex-direction: row;
+      text-align: left;
+      gap: 20px;
+      align-items: flex-start;
+      flex-basis: 40%;
+    }
+
+    @include on-desktop {
+      flex-basis: auto;
+    }
+  }
+  &__preview {
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    &--blue {
+      background: #4171c4;
+    }
+    &--green {
+      background: #6ccc3e;
+    }
+    &--red {
+      background: #e5333d;
+    }
+    &--purple {
+      background: #8555c1;
+    }
+  }
+  &__icon {
+    width: 50px;
+    height: 50px;
+  }
+  &__data {
+  }
+  &__number {
+    margin-top: 20px;
+    font-size: 38px;
+    line-height: 1.6;
+    color: var(--accent-primary-color);
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+  }
+  &__title {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}

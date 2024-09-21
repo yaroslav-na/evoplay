@@ -1,0 +1,23 @@
+@import "../mixins/index.scss";
+
+.page {
+  background: var(--background-color);
+  color: var(--primary-color);
+  font-family: "Mashetic";
+  font-weight: 400;
+  padding-top: 60px;
+
+  @include on-laptop {
+    padding-top: 40px;
+  }
+
+  &.--js-fixed {
+    overflow: hidden;
+  }
+
+  &__header {
+    z-index: 10;
+    position: sticky;
+    top: 0;
+  }
+}

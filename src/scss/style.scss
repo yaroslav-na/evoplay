@@ -1,0 +1,25 @@
+@import "./mixins/index.scss";
+@import "./fonts/index.scss";
+@import "./vars.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.__container {
+  padding-inline: 16px;
+  margin-inline: auto;
+  overflow: hidden;
+
+  @include on-laptop {
+    max-width: 1290px;
+  }
+}
+
+@import "./blocks/index.scss";
